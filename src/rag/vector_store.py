@@ -42,6 +42,12 @@ class VectorStore:
             metadatas: List of metadata dicts for each chunk
             embeddings: Pre-computed embeddings (optional, ChromaDB can compute)
         """
+        # --- NEW FAILSAFE: Prevent ChromaDB crash on empty lists ---
+        if not documents or len(documents) == 0:
+            print("⚠️ Warning: No documents provided to vector store. Skipping add operation.")
+            return
+        # -----------------------------------------------------------
+
         # Generate unique IDs based on content hash
         ids = [self._generate_id(doc, meta) for doc, meta in zip(documents, metadatas)]
         
