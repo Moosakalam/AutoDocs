@@ -10,7 +10,17 @@ try:
 except ImportError:
     pass
 # -------------------------------------
+import sys
 
+try:
+    import pysqlite3
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except (ImportError, KeyError):
+    # This handles both the missing package AND the pop failure
+    pass
+
+import sqlite3
+# This will now use the pysqlite3 version if it was successfully swapped
 import streamlit as st
 import asyncio
 from pathlib import Path

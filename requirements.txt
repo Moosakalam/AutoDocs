@@ -19,7 +19,7 @@ tree-sitter-java>=0.23.0
 pysqlite3-binary
 # Git Operations
 gitpython==3.1.42
-
+pysqlite3-binary
 # Configuration & Environment
 pyyaml==6.0.1
 python-dotenv==1.0.1
