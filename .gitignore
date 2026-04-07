@@ -1,0 +1,25 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# AutoDoc Specific Outputs
+output/
+demo_output/
+demo_project/
+
+# Vector Database
+chroma_db/
+
+# OS/System Files
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  autodoc:
+    build: .
+    container_name: autodoc
+    volumes:
+      - ./output:/app/output
+      - ./chroma_db:/app/chroma_db
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
+    command: python demo.py
+
+  # Optional: Streamlit web UI
+  autodoc-ui:
+    build: .
+    container_name: autodoc-ui
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./output:/app/output
+      - ./chroma_db:/app/chroma_db
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: streamlit run demo_ui.py --server.port=8501 --server.address=0.0.0.0

@@ -1,0 +1,35 @@
+# AutoDoc - Multi-Agent Documentation System
+# Requirements
+
+# AutoGen Framework
+autogen-agentchat==0.4.0
+autogen-ext[openai]==0.4.0
+streamlit
+# RAG & Vector Database
+chromadb>=0.5.0
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-openai==0.1.7
+
+# Code Parsing
+tree-sitter>=0.23.0
+tree-sitter-python>=0.23.0
+tree-sitter-javascript>=0.23.0
+tree-sitter-java>=0.23.0
+pysqlite3-binary
+# Git Operations
+gitpython==3.1.42
+
+# Configuration & Environment
+pyyaml==6.0.1
+python-dotenv==1.0.1
+
+# Data Models
+pydantic>=2.10.0
+
+# Utilities
+tiktoken>=0.7.0
+groq
+# Optional: For API deployment
+fastapi==0.110.0
+uvicorn==0.29.0

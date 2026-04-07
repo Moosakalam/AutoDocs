@@ -1,0 +1,29 @@
+llm:
+  model: "llama-3.3-70b-versatile"
+  temperature: 0.2
+  max_tokens: 4000
+
+embeddings:
+  model: "text-embedding-3-small"
+  dimension: 1536            
+
+chromadb:
+  persist_directory: "./chroma_db"
+  collection_name: "codebase_embeddings"
+
+parsing:
+  max_chunk_size: 1000
+  overlap: 100
+  supported_languages:
+    - python
+    - javascript
+    - java
+
+repository:
+  clone_depth: 1
+  exclude_patterns:
+    - "*.md"
+    - "*.txt"
+    - "node_modules/**"
+    - "__pycache__/**"
+    - "*.pyc"
