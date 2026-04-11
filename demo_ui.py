@@ -2,6 +2,12 @@
 AutoDoc Showcase Web UI
 Interactive Streamlit interface for demonstrating the AutoDoc multi-agent pipeline.
 """
+import streamlit as st
+import datetime
+
+# This doesn't do much visually, but ensures the script 
+# executes fully when the URL is accessed.
+st.sidebar.caption(f"Last ping: {datetime.datetime.now().strftime('%H:%M:%S')}")
 # --- CHROMADB STREAMLIT CLOUD HACK ---
 import sys
 try:
